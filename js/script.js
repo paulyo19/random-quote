@@ -35,15 +35,30 @@ var quotes = [
         citation: 'Movie',
         year: 1976
     },
+    {
+        quote: "Life is what happens when you're busy making other plans.",
+        source: '-John Lennon',
+        citation: 'Speech',
+        year: 1965
+    },
+    {
+        quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
+        source: '-Dr. Seuss',
+        citation: 'Speech',
+        year: 1954
+    },
+    {
+        quote: 'Life is really simple, but we insist on making it complicated.',
+        source: '-Confucius',
+        citation: 'Speech',
+        year: 479
+    },
 ];
 
 
 
 function getRandomQuote() {
     for (let i = 0; i < quotes.length; i++) {
-        let a = Math.floor(Math.random() * quotes.length);
-        return a;
+        return quotes[Math.floor(Math.random()*quotes.length)]
     }
 }
-
-console.log(getRandomQuote())

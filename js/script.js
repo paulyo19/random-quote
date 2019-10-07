@@ -2,25 +2,25 @@ var quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
         source: '-Nelson Mandela',
-        citation: 'speech',
+        citation: 'Speech',
         year: 1970
     },
     {
-        quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-        source: '-Nelson Mandela',
-        citation: 'speech',
-        year: 1970
+        quote: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
+        source: '-Steve Jobs',
+        citation: 'Speech',
+        year: 2002
     },
     {
         quote: 'Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.',
         source: '-Mark Twain',
-        citation: 'speech',
+        citation: 'Speech',
         year: 1885
     },
     {
         quote: 'You can do anything, but not everything.',
         source: '-David Allen',
-        citation: 'speech',
+        citation: 'Speech',
         year: 1965
     },
     {
@@ -36,3 +36,14 @@ var quotes = [
         year: 1976
     },
 ];
+
+
+
+function getRandomQuote() {
+    for (let i = 0; i < quotes.length; i++) {
+        let a = Math.floor(Math.random() * quotes.length);
+        return a;
+    }
+}
+
+console.log(getRandomQuote())

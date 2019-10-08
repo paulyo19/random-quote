@@ -1,4 +1,6 @@
-var quotes = [
+let display = document.querySelector('#quote-box');
+
+let quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
         source: '-Nelson Mandela',
@@ -61,4 +63,10 @@ function getRandomQuote() {
     for (let i = 0; i < quotes.length; i++) {
         return quotes[Math.floor(Math.random()*quotes.length)]
     }
+}
+
+function printQuote() {
+    let print = getRandomQuote();
+    let display = '';
+
 }

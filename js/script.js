@@ -1,5 +1,3 @@
-let display = document.querySelector('#quote-box');
-
 let quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
@@ -67,6 +65,7 @@ function getRandomQuote() {
 
 function printQuote() {
     let print = getRandomQuote();
-    let display = '';
-
+    var display = '';
+    var display = '<p class = "quote"></p>' + print.quote + '<p class = "source">' + print.source + '</p>' + '<span class = "citation">' + print.citation + '</span>' + '<span class = "year">' + print.year + '</span>'
+    document.getElementById('#quote-box').innerHTML = display
 }

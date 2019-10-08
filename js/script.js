@@ -1,4 +1,4 @@
-let quotes = [
+var quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
         source: '-Nelson Mandela',
@@ -56,7 +56,6 @@ let quotes = [
 ];
 
 
-
 function getRandomQuote() {
     for (let i = 0; i < quotes.length; i++) {
         return quotes[Math.floor(Math.random()*quotes.length)]
@@ -64,8 +63,18 @@ function getRandomQuote() {
 }
 
 function printQuote() {
-    let print = getRandomQuote();
+    var print = getRandomQuote();
     var display = '';
-    var display = '<p class = "quote"></p>' + print.quote + '<p class = "source">' + print.source + '</p>' + '<span class = "citation">' + print.citation + '</span>' + '<span class = "year">' + print.year + '</span>'
+    var display = '<p class = "quote">' + print.quote + '</p>' + '<p class = "source">' + print.source
+
+    if (print.citation === quotes.citation) {
+        var display =+ 'span class="citation">' + print.citation + '</span>'
+    if (print.year === quotes.year) {
+        var display =+ 'span class="year">' + print.year + '</span>' + '</p>'
+    }
+    }
     document.getElementById('#quote-box').innerHTML = display
 }
+
+
+

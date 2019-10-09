@@ -31,7 +31,8 @@ var quotes = [
         quote: "You, me, or nobody is gonna hit as hard as life. But it ain't about how hard you hit. It's about how hard you can get hit and keep moving forward. How much you can take and keep moving forward. That's how winning is done! ",
         source: '-Rocky Balboa',
         citation: 'Movie',
-        year: 1976
+        year: 1976,
+        tag: 'insperational'
     },
     {
         quote: "Life is what happens when you're busy making other plans.",
@@ -42,7 +43,8 @@ var quotes = [
     {
         quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
         source: '-Dr. Seuss',
-        citation: 'Speech'
+        citation: 'Speech',
+        tag: 'humor'
     },
     {
         quote: 'Life is really simple, but we insist on making it complicated.',
@@ -69,6 +71,10 @@ function printQuote() {
 
     if (print.year) {
         display += '<span class="year">' + print.year + '</span>'
+    }
+
+    if (print.tag){
+        display += '<span class="tag">' + print.tag + '</span>'
     }
     display += '</p>'
     return document.getElementById('quote-box').innerHTML = display

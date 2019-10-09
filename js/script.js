@@ -65,16 +65,16 @@ function getRandomQuote() {
 function printQuote() {
     var print = getRandomQuote();
     var display = '';
-    var display = '<p class = "quote">' + print.quote + '</p>' + '<p class = "source">' + print.source
-
-    if (print.citation === quotes.citation) {
-        var display =+ 'span class="citation">' + print.citation + '</span>'
-    if (print.year === quotes.year) {
-        var display =+ 'span class="year">' + print.year + '</span>' + '</p>'
+    display += '<p class = "quote">' + print.quote + '</p>' + '<p class = "source">' + print.source;
+    if (print.citation) {
+        display += '<span class="citation">' + print.citation + '</span>'
+        console.log(display)
+    } else {
+        return display
     }
-    }
-    document.getElementById('#quote-box').innerHTML = display
+    // document.getElementById('#quote-box').innerHTML = print
 }
 
+console.log(printQuote())
 
 

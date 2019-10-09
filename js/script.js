@@ -2,8 +2,7 @@ var quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
         source: '-Nelson Mandela',
-        citation: 'Speech',
-        year: 1970
+        citation: 'Speech'
     },
     {
         quote: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
@@ -14,7 +13,6 @@ var quotes = [
     {
         quote: 'Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.',
         source: '-Mark Twain',
-        citation: 'Speech',
         year: 1885
     },
     {
@@ -44,14 +42,11 @@ var quotes = [
     {
         quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
         source: '-Dr. Seuss',
-        citation: 'Speech',
-        year: 1954
+        citation: 'Speech'
     },
     {
         quote: 'Life is really simple, but we insist on making it complicated.',
-        source: '-Confucius',
-        citation: 'Speech',
-        year: 479
+        source: '-Confucius'   
     },
 ];
 
@@ -65,14 +60,18 @@ function getRandomQuote() {
 function printQuote() {
     var print = getRandomQuote();
     var display = '';
-    display += '<p class = "quote">' + print.quote + '</p>' + '<p class = "source">' + print.source;
+    display += '<p class = "quote">' + print.quote + '</p>' 
+    display += '<p class = "source">' + print.source;
+
     if (print.citation) {
         display += '<span class="citation">' + print.citation + '</span>'
-        console.log(display)
-    } else {
-        return display
     }
-    // document.getElementById('#quote-box').innerHTML = print
+
+    if (print.year) {
+        display += '<span class="year">' + print.year + '</span>'
+    }
+    display += '</p>'
+    return document.getElementById('quote-box').innerHTML = display
 }
 
 console.log(printQuote())

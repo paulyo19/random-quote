@@ -48,21 +48,21 @@ var quotes = [
     },
     {
         quote: 'Life is really simple, but we insist on making it complicated.',
-        source: '-Confucius'   
+        source: '-Confucius'
     },
 ];
 
 
 function getRandomQuote() {
     for (let i = 0; i < quotes.length; i++) {
-        return quotes[Math.floor(Math.random()*quotes.length)]
+        return quotes[Math.floor(Math.random() * quotes.length)]
     }
 }
 
 function printQuote() {
     var print = getRandomQuote();
     var display = '';
-    display += '<p class = "quote">' + print.quote + '</p>' 
+    display += '<p class = "quote">' + print.quote + '</p>'
     display += '<p class = "source">' + print.source;
 
     if (print.citation) {
@@ -73,26 +73,29 @@ function printQuote() {
         display += '<span class="year">' + print.year + '</span>'
     }
 
-    if (print.tag){
+    if (print.tag) {
         display += '<span class="tag">' + print.tag + '</span>'
     }
     display += '</p>'
     return document.getElementById('quote-box').innerHTML = display
 }
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-document.getElementById('loadQuote').addEventListener("click", random_bg_color, false);
-
-
-
 function random_bg_color() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
-  
     document.body.style.background = bgColor;
-    }
+}
 
-random_bg_color();
+setInterval(function(){
+    printQuote()
+    random_bg_color()
+ }, 20000);
+
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", random_bg_color, false);
+
+
+
+

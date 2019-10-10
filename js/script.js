@@ -1,3 +1,5 @@
+// array of quotes and source that will display on the site 
+// and if any of the array objects have a citation, year or tag they will also be displayed
 var quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
@@ -52,27 +54,35 @@ var quotes = [
     },
 ];
 
-
+// this function will choose a random quote when it is called upon
 function getRandomQuote() {
     for (let i = 0; i < quotes.length; i++) {
         return quotes[Math.floor(Math.random() * quotes.length)]
     }
 }
 
+
+// our printQuote function will call a random quote and display our concatenation strings
 function printQuote() {
     var print = getRandomQuote();
     var display = '';
+
+    // concatenating strings together
     display += '<p class = "quote">' + print.quote + '</p>'
     display += '<p class = "source">' + print.source;
 
+// checking if the quote has a citation in it
+//  if it does it will print the citation.... if not it wont print it
     if (print.citation) {
         display += '<span class="citation">' + print.citation + '</span>'
     }
 
+//  checking if quote has a year in it.... runs excactly like the citation if statement
     if (print.year) {
         display += '<span class="year">' + print.year + '</span>'
     }
 
+// checking if quote has a tag in it..... and you guessed it... runs like the above if statements
     if (print.tag) {
         display += '<span class="tag">' + print.tag + '</span>'
     }
@@ -80,6 +90,7 @@ function printQuote() {
     return document.getElementById('quote-box').innerHTML = display
 }
 
+// creating a function for a random background color 
 function random_bg_color() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
@@ -88,12 +99,17 @@ function random_bg_color() {
     document.body.style.background = bgColor;
 }
 
+// this code will change the quote and background color every 20secs if user does not wish to click on button
 setInterval(function(){
-    printQuote()
-    random_bg_color()
- }, 20000);
+    printQuote()               //<-- calling the printQuote function 
+    random_bg_color()          // <-- calling the background function
+ }, 20000);                    // <-- how many seconds until they both change
 
+
+// we target the ID of loadQuote so when a user clicks on the SHOW ANOTHER QUOTE button it will display a random quote to the screen 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+// this will also change the backround color on a new quote when a user clicks on the SHOW ANOTHER QUOTE button
 document.getElementById('loadQuote').addEventListener("click", random_bg_color, false);
 
 

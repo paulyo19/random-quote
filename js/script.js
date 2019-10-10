@@ -1,5 +1,4 @@
-// array of quotes and source that will display on the site 
-// and if any of the array objects have a citation, year or tag they will also be displayed
+// creating an array object of... quotes, source and some will have a year, citation and tag
 var quotes = [
     {
         quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
@@ -71,18 +70,18 @@ function printQuote() {
     display += '<p class = "quote">' + print.quote + '</p>'
     display += '<p class = "source">' + print.source;
 
-// checking if the quote has a citation in it
-//  if it does it will print the citation.... if not it wont print it
+    // checking if the quote has a citation in it
+    //  if it does it will print the citation.... if not it wont print it
     if (print.citation) {
         display += '<span class="citation">' + print.citation + '</span>'
     }
 
-//  checking if quote has a year in it.... runs excactly like the citation if statement
+    //  checking if quote has a year in it.... runs excactly like the citation if statement
     if (print.year) {
         display += '<span class="year">' + print.year + '</span>'
     }
 
-// checking if quote has a tag in it..... and you guessed it... runs like the above if statements
+    // checking if quote has a tag in it..... and you guessed it... runs like the above if statements
     if (print.tag) {
         display += '<span class="tag">' + print.tag + '</span>'
     }
@@ -100,10 +99,10 @@ function random_bg_color() {
 }
 
 // this code will change the quote and background color every 20secs if user does not wish to click on button
-setInterval(function(){
+setInterval(function () {
     printQuote()               //<-- calling the printQuote function 
     random_bg_color()          // <-- calling the background function
- }, 20000);                    // <-- how many seconds until they both change
+}, 20000);                    // <-- how many seconds until they both change
 
 
 // we target the ID of loadQuote so when a user clicks on the SHOW ANOTHER QUOTE button it will display a random quote to the screen 
